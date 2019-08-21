@@ -14,8 +14,10 @@
   	  <div class="header-shadow">
   	  	<nav>
   	  	  <ul>
-  	  	  	<li>Eventos</li>
-  	  	  	<li>Ajax</li>
+            <li><a href="#dom">DOM</a></li>
+  	  	  	<li><a href="#events">Eventos</a></li>
+  	  	  	<li><a href="#ajax">Ajax</a></li>
+            <li><a >Atividade</a></li>
   	  	  </ul>
   	  	</nav>
 
@@ -24,7 +26,7 @@
   	  </div>
   	</header>
 
-  	<section>
+  	<section id="dom">
   	  <h3>Manipulação de Elementos</h3>
 
   	  <div id="elements">
@@ -42,7 +44,9 @@
   	  </div>
   	</section>
 
-  	<section>
+    <hr>
+
+  	<section id="events">
   	  <h3>Eventos</h3>
   	  
   	  <div class="event">
@@ -76,5 +80,27 @@
   	  	<span>R$0,00</span>
   	  </div>
   	</section>
+
+    <hr>
+
+    <section id="ajax">
+      <h3>Ajax</h3>
+
+      <form>
+        <input type="text" placeholder="CEP" />
+        <input type="submit" value="Pesquisar" />
+      </form>
+
+      <div id="theCityIs">A Cidade desse CEP é <span id="theCityIs-name">...</span></div>
+      <div id="theCityIs">O Estado dessa Cidade é <span id="theCityIs-state">...</span></div>
+    </section>
+
+    <hr>
+
+    <section>
+      <h3>Criar e Deletar</h3>
+      <div id="elements-camp">
+      </div>
+    </section>
   </body>
 </html>

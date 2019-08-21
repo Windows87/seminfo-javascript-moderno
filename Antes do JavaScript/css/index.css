@@ -1,119 +1,122 @@
-
 html, body {
+  width: 100%;
+  height: 100%;
   margin: 0;
-  min-height: 100%;
-}
-
-body {
-  background-color: #171717;
+  font-family: Montserrat;
 }
 
 header {
-  width: calc(100% - 16px);
-  height: 50px;
-  padding: 8px;
-  background-color: black;
-  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/fundo-1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.header-shadow {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 h1 {
-  color: #ffc107;
-  margin: 0;
-  font-family: Archivo Black;
-}
-
-main {
-  padding-top: 66px;
-  padding-bottom: 66px;
-  display: flex;
-  justify-content: center;
-}
-
-.hq-list {
-  display: flex;
-  width: 100%;
-  max-width: 1200px;
-  flex-wrap: wrap;
-  justify-content: center; 
-}
-
-.hq {
-  padding: 8px;
-  margin: 8px;
-  background-color: #333333;
   color: white;
   text-align: center;
-  font-family: Pathway Gothic One;
-}
-
-.hq img {
-  height: 250px;
-}
-
-@media screen and (max-width: 728px) {
-  .hq img {
-    width: 100%;
-    height: unset;
-  }
-
-  .hq {
-    width: calc(50% - 32px);
-  }
-}
-
-.hq h3 {
+  font-family: Orbitron;
   margin: 4px;
 }
 
-.hq button, #cart button {
-  width: 100%;
-  border: 0;
-  border-radius: 8px;
-  font-family: Pathway Gothic One;
-  background: white;
-  color: black;
-  font-size: 18px;
-  margin-top: 6px;
-  cursor: pointer;
-  transition: 0.5s all;
+h2 {
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 12px;
+  margin: 4px;
 }
 
-button:focus, button:hover {
-  filter: brightness(0.8);
-}
-
-*:focus {
-  outline: none;
-}
-
-#cart {
-  width: calc(100% - 16px);
-  position: fixed;
-  bottom: 0;
-  background-color: black;
-  height: 50px;
+nav {
+  position: absolute;
+  top: 0;
   padding: 8px;
+  width: calc(100% - 16px);
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  color: white;
+  margin-left: 8px;
+}
+
+section  {
+  padding: 12px;
+}
+
+h3 {
+  margin: 8px;
+  font-size: 24px;
+}
+
+#elements {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.element {
+  flex: 1;
+  height: 150px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+  margin: 6px;
+}
+
+.event {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  font-family: Archivo Black;
+  margin: 8px;
+  margin-top: 16px;
+}
+
+button {
+  height: 40px;
+  border: 0;
   color: white;
-
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 8px;
+  background-color: #492480;
 }
 
-#cart-total {
+.event span {
+  font-weight: bold;
   font-size: 20px;
 }
 
-#cart-totalValue {
-  color: #ffc107;
+.event-checkboxList {
+  display: flex;
+  flex-direction: column;
 }
 
-#cart button {
-  background-color: #ffc107;
-  width: unset;
-  font-size: 20px;
+.event-checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.event-checkbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+.event-checkbox span {
+  font-size: 18px;
+  margin-left: 8px;
 }

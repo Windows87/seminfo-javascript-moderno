@@ -50,29 +50,29 @@
   	  <h3>Eventos</h3>
   	  
   	  <div class="event">
-  	  	<button>Clique Aqui</button>
+  	  	<button onclick="mostrarData()">Clique Aqui</button>
   	  	<span id="date-value">...</span>
   	  </div>
 
   	  <div class="event">
   	  	<div class="event-checkboxList">
   	  	  <div class="event-checkbox">
-  	  	    <input type="checkbox" />
+  	  	    <input type="checkbox" onchange="somarValor(this, 5)" />
   	  	    <span>R$5,00</span>
   	  	  </div>
 
   	  	  <div class="event-checkbox">
-  	  	    <input type="checkbox" />
+  	  	    <input type="checkbox" onchange="somarValor(this, 2)" />
   	  	    <span>R$2,00</span>
   	  	  </div>
 
   	  	  <div class="event-checkbox">
-  	  	    <input type="checkbox" />
+  	  	    <input type="checkbox" onchange="somarValor(this, 8)" />
   	  	    <span>R$8,00</span>
   	  	  </div> 
 
   	  	  <div class="event-checkbox">
-  	  	    <input type="checkbox" />
+  	  	    <input type="checkbox" onchange="somarValor(this, 12)" />
   	  	    <span>R$12,00</span>
   	  	  </div>   	  	   	  	    	  	    	  	  
   	  	</div>
@@ -102,5 +102,7 @@
       <div id="elements-camp">
       </div>
     </section>
+
+     <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>

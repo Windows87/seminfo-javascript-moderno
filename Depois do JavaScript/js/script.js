@@ -116,11 +116,10 @@ function criarElemento() {
   elementoPai.appendChild(elemento3);
 }
 
-criarElemento();
+//criarElemento();
 
 function limparElementoPai() {
   const elementoPai = document.querySelector('#elements-camp');
   elementoPai.innerHTML = '';
 }
 
-setTimeout(limparElementoPai, 5000);

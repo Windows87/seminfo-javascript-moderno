@@ -160,7 +160,7 @@ form input[type="text"] {
   font-size: 20px;
 }
 
-#theCityIs-name, #theCityIs-state {
+#theCityIs-name, #theCityIs-state, #theCityIs-area {
   font-weight: bold;
   color: black;
 }

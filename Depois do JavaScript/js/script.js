@@ -41,13 +41,43 @@ function modificarTodosElementos() {
 
 //modificarTodosElementos();
 
+// Criar Elementos
+
+function criarElemento() {
+  const elemento = document.createElement('div');
+  const elemento2 = document.createElement('div');
+  const elemento3 = document.createElement('img');
+  const elementoPai = document.querySelector('#elements-camp');
+
+  elemento.classList.add('element');
+  elemento2.classList.add('element');
+  elemento2.style['background-color'] = 'red';
+  elemento3.src = 'img/fundo-2.jpg';
+  elemento3.style['width'] = '100%';
+
+  elementoPai.appendChild(elemento);
+  elementoPai.appendChild(elemento2);
+  elementoPai.appendChild(elemento3);
+}
+
+//criarElemento();
+
+function limparElementoPai() {
+  const elementoPai = document.querySelector('#elements-camp');
+  elementoPai.innerHTML = '';
+}
+
 // Eventos
 
 function mostrarData() {
   const data = new Date();
   const elemento = document.querySelector('#date-value');
-  const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
-  elemento.innerText = `${data.getDate()} de ${meses[data.getMonth()]}`;
+
+  const horas = data.getHours();
+  const minutos = data.getMinutes();
+  const segundos = data.getSeconds();
+
+  elemento.innerText = `${horas}:${minutos}:${segundos}`;
 }
 
 let valorTotal = 0;
@@ -77,18 +107,17 @@ async function pesquisarCEP(evento) {
   	return alert('CEP Inválido');
 
   try {
-  	const chamada = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+  	const chamada = await fetch(`https://api.postmon.com.br/v1/cep/${cep}`);
   	const dadosDoCEP = await chamada.json();
   	console.log(dadosDoCEP);
 
-  	if(dadosDoCEP.erro)
-  	  return alert('CEP não Existe');
-
   	const nomeDaCidade = document.querySelector('#theCityIs-name');
   	const estadoDaCidade = document.querySelector('#theCityIs-state');
+    const areaDaCidade = document.querySelector('#theCityIs-area');
 
-  	nomeDaCidade.innerText = dadosDoCEP.localidade;
-  	estadoDaCidade.innerText = dadosDoCEP.uf;
+  	nomeDaCidade.innerText = dadosDoCEP.cidade;
+  	estadoDaCidade.innerText = dadosDoCEP.estado;
+    areaDaCidade.innerText = `${dadosDoCEP.cidade_info.area_km2} km2`;
   } catch(error) {
   	alert('Erro ao Pesquisar o CEP');
   	console.log(error);
@@ -96,30 +125,4 @@ async function pesquisarCEP(evento) {
 }
 
 document.querySelector('form').addEventListener('submit', pesquisarCEP);
-
-// Criar Elementos
-
-function criarElemento() {
-  const elemento = document.createElement('div');
-  const elemento2 = document.createElement('div');
-  const elemento3 = document.createElement('img');
-  const elementoPai = document.querySelector('#elements-camp');
-
-  elemento.classList.add('element');
-  elemento2.classList.add('element');
-  elemento2.style['background-color'] = 'red';
-  elemento3.src = 'img/fundo-2.jpg';
-  elemento3.style['width'] = '100%';
-
-  elementoPai.appendChild(elemento);
-  elementoPai.appendChild(elemento2);
-  elementoPai.appendChild(elemento3);
-}
-
-//criarElemento();
-
-function limparElementoPai() {
-  const elementoPai = document.querySelector('#elements-camp');
-  elementoPai.innerHTML = '';
-}
 

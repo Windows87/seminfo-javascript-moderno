@@ -1,6 +1,6 @@
 async function pesquisarPokemon(evento) {
   evento.preventDefault();
-  const nomeDoPokemon = document.querySelector('#search-pokemon-name').value;
+  const nomeDoPokemon = document.querySelector('#search-pokemon-name').value.toLowerCase();
 
   if(!nomeDoPokemon)
   	return alert('Digite o Nome do Pokemon');
